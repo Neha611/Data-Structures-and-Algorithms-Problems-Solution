@@ -26,3 +26,8 @@ Topic Tags -: Array, Dynamic Programming
 
 Approach -:
 
+The problem statement says that you can buy a stock on ith day and sell a stock on jth day such j>i. You have do transaction such that your total profit is maximum. Now this problem is of Dynamic Programming 
+because you can either select a day for buy/sell or skip a day. Let's see how we will do this.
+We will keep track of buying day and will choose a day that has minimum stock price then we will choose a selling day such price of stock on that is day is greater than the price of stock on buying day and our 
+maximum profit will prices[sell_day] - prices[buy_day]. We will consider one transaction only as per mentioned in problem statement.
+
