@@ -32,4 +32,13 @@ The replacement must be **in place** and use only **constant extra memory**.
 
 ## Approach
 
+The problem saya that we have to lexicographic next arrangement of given array or more specifically we can say that we have find just greater number of the number represented by array. So when we look closely
+at the given array we will not find any next arrangement if the array is decreasing. To make just next greater arrangement we have to arrange rightmost elements first. As you can see in above example the last 
+numbers were arranged to get next permutation. So in order to find next permutation we will iterate our array from last and will keep track of maximum element. While traversing if we encounter any element greater
+than `max_ele` then we will do nothing because rearranging them will make our arrangement smaller. But if encounter any element smaller than `max_ele` then we will swap this element with another element which is
+just greater than current element and whose index is greater than index of current of current element and then we will sort the subarray ranging from `(current_index+1, nums.size())`. 
 
+You might be thinking that why are we sorting and swapping here. The reason is simple we are swapping our current element with its just greater number this will help us to create next sequence of givem sequence
+amd sorting will maintain the lexicographical order. 
+
+This is how we will solve this problem.
