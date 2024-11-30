@@ -35,4 +35,6 @@ Note that there may be other ways to remove 2 obstacles to create a path.
 
 ## Approach
 
+In this problem we are given a grid that consists of **0** and **1**. 0 represents an **empty cell** whereas 1 represents an **obstacle**. We need to start from `(0,0)` and reach `(m-1,n-1)` such that we need to find the path removing minimum number of obstacles. The brute force approach recommends the use **DFS or BFS** checking every possible path and calculating answer, but this won't work here as it will lead to time complexity. 
 
+The another approach to solve the problem is using **Shortest Path** algorithms i.e. **Djkstra's Algorithm** in which we move to that cell which has smallest weight in this case minimum obstacle removals. We will use an **ordered set** here instead of **priority queue**. The set will contain `(number of obstacles removed, row, column)`. We will use **BFS** to find answer. We will also maintain a **visited** array so that we don't loop around same state again and again here the state will be `(row, column)`. We have not included `number of obstacles removed` in `visited` array because we are using **ordered set** here so we are always working with the path that has minimum obstacles. Once we reach last corner we will get our answer.
